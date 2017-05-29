@@ -1,0 +1,8 @@
+<h1>
+Lista de pessoas
+</h1>
+<ul>
+  <li *ngFor="let p of pessoas| async">
+    {{ p.nome + ' ' + p.sobrenome}}
+  </li>
+</ul>
