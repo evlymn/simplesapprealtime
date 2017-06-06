@@ -1,0 +1,14 @@
+<h1>Cadastro de usuário</h1>
+<form #f="ngForm" (submit)="form_cadastro(f)">
+  <input type="email" required ngModel email name="email" placeholder="Email">
+  <br />
+  <input type="email" required ngModel email name="emailconfirmacao" placeholder="Confirme o email">
+  <small *ngIf="!verificaSeEmailsSaoIguais(f)">Emails não são iguais</small>
+  <br />
+  <input type="password" required ngModel name="senha" placeholder="Senha">
+  <br />
+  <input type="password" required ngModel name="senhaconfirmacao" placeholder="Confirme a senha">
+  <small *ngIf="!verificaSeSenhasSaoIguais(f)">Senhas não conferem</small>
+  <br />
+  <button type="submit" [disabled]="!verificaSeFormEValido(f)">Cadastrar</button>
+</form>
